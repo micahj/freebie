@@ -1,10 +1,11 @@
 ## docker build and run
 
-On your machine
-cd docker
-docker build -t freebie:v1 .
-cd ..
-docker run -it -v \$(pwd)/conf:/etc/freeswitch freebie:v1
+On your dev machine
+
+    cd docker
+    docker build -t freebie:v1 .
+    cd ..
+    docker run -it -v $(pwd)/conf:/etc/freeswitch freebie:v1
 
 ## register zoiper softphone
 
@@ -37,4 +38,4 @@ dial 9886
 
 ### play a small ivr and select from options
 
-dial 5002: Once prompted use the calls embedded dialpad and press 5
+dial 5002: Once prompted use the calls embedded dialpad and press 5 for hours of fun

@@ -1,0 +1,13 @@
+<include>
+    <extension name="flite">
+        <condition field="destination_number" expression="^9886$">
+            <action application="set" data="tts_engine=flite" />
+            <action application="set" data="tts_voice=kal" />
+            <!-- <action application="set_audio_level" data="write 4" />
+        <action application="set_audio_level" data="read 4" /> -->
+            <action application="speak" data="Hello, this is dev only T T S for yabber. Steven Hawking says hi!" />
+            <action application="sleep" data="1000" />
+            <action application="hangup" />
+        </condition>
+    </extension>
+</include>

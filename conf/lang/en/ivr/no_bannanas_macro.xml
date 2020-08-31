@@ -1,0 +1,13 @@
+<macro name="nobananas">
+    <input pattern="^(\d+)$">
+        <match>
+            <action function="play-file" data="ivr/ivr-yes_we_have_no_bananas.wav" />
+            <action function="sleep" data="1000" />
+            <action function="play-file" data="voicemail/vm-goodbye.wav" />
+            <action function="sleep" data="1000" />
+        </match>
+        <nomatch>
+            <action function="play-file" data="ivr/ivr-that_was_an_invalid_entry.wav" />
+        </nomatch>
+    </input>
+</macro>

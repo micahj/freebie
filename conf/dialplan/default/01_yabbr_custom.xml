@@ -1,0 +1,10 @@
+<include>
+    <extension name="whos calling">
+        <condition field="destination_number" expression="^(1500)$">
+            <action application="answer" />
+            <action application="playback" data="phrase:whoami:${username}" />
+            <sction application="sleep" data="1000" />
+            <action application="hangup" />
+        </condition>
+    </extension>
+</include>

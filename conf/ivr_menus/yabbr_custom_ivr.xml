@@ -1,0 +1,16 @@
+<menu name="simple_yabbr_greeting" greet-long="ivr/ivr-generic_greeting.wav" greet-short="ivr/ivr-generic_greeting.wav" invalid-sound="ivr/ivr-that_was_an_invalid_entry.wav" exit-sound="voicemail/vm-goodbye.wav" confirm-attempts="3" timeout="10000" inter-digit-timeout="2000" max-failures="3" max-timeouts="3" digit-len="4">
+    <entry action="menu-exec-app" digits="9" param="directory default ${domain}" />
+
+    <!-- woks but has obverhead of the transfer -->
+    <entry action="menu-exec-app" digits="4" param="playback phrase:whoami:${username}" />
+    <entry action="menu-exec-app" digits="4" param="hangup" />
+
+
+    <entry action="menu-exec-app" digits="5" param="playback phrase:nobananas:${username}" />
+    <entry action="menu-exec-app" digits="5" param="hangup" />
+
+    <!-- <entry action="menu-exec-app" digits="6" param="ivr/ivr-yes_we_have_no_bananas.wav" /> -->
+    <!-- <entry action="menu-say-phrase" digits="6" param="whoami:${username}" /> -->
+    <entry action="menu-exec-app" digits="^(10[01][0-9])$" param="transfer $1 XML features" />
+    <entry action="menu-top" digits="*" />
+</menu>

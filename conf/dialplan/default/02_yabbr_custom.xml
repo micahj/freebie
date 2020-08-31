@@ -1,0 +1,22 @@
+<include>
+    <extension name="yabbr sample greeting">
+        <condition hour="0-11" break="never">
+            <action application="set" data="tod=morning" inline="true" />
+        </condition>
+        <condition hour="12-17" break="never">
+            <action application="set" data="tod=afternoon" inline="true" />
+        </condition>
+        <condition hour="18-23" break="never">
+            <action application="set" data="tod=evening" inline="true" />
+        </condition>
+        <condition field="destination_number" expression="^5002$">
+            <action application="answer" />
+            <action application="sleep" data="1000" />
+            <action application="playback" data="ivr/ivr-good_${tod}.wav" />
+            <!-- <action application="playback" data="screaming_monkeys.wav" /> -->
+            <action application="sleep" data="500" />
+            <action application="ivr" data="simple_yabbr_greeting" />
+            >
+        </condition>
+    </extension>
+</include>

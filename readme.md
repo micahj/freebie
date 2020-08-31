@@ -22,7 +22,7 @@ In zoiper (or your favourite softphone desktop app) register an account, for exa
 You can supply the user account info to zoiper like so
 eg
 1000@172.17.0.2:5060 and step through the prompts.
-The password in our case is 12345! (see vars.xml)
+The password in our case is 12345! (see vars.xml). No sensitive intellectual property there so fear not.
 
 ## some test calls
 
